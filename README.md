@@ -3,7 +3,7 @@ Description: Through the vibration and music when opening the app to stimulate t
 
 # Usage
 Install .apk files on Android phone.  
-[Download link](https://github.com/HaojieHuang-Ryan/StressMeter/tree/v1.0.1)
+[Download link](https://github.com/HaojieHuang-Ryan/StressMeter/tree/v1.1.0)
 
 # Introduction
 <div align="center">
