@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".ui.stressmeter.StressMeterFragment">
+
+    <TextView
+        android:id="@+id/text_stress_meter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:text="Touch the image that best captures how stressed you feel right now"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridView
+        android:id="@+id/image_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:numColumns="4"
+        app:layout_constraintBottom_toTopOf="@+id/more_images_button"
+        app:layout_constraintTop_toBottomOf="@+id/text_stress_meter"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <Button
+        android:id="@+id/more_images_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:minHeight="60dp"
+        android:textSize="15dp"
+        android:text="More Images"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
