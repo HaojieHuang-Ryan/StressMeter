@@ -19,8 +19,6 @@ class StressMeterFragment : Fragment()
 {
     private var _binding: FragmentStressMeterBinding? = null
     private lateinit var grid_view: GridView
-    private lateinit var stressmeterviewmodel: StressMeterViewModel
-//    var temp_count = 3
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -36,8 +34,6 @@ class StressMeterFragment : Fragment()
 
         val mediaPlayer = MediaPlayer.create(context, R.raw.sound)
         val vibrator = activity?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-        stressmeterviewmodel = ViewModelProvider(this)[StressMeterViewModel::class.java]
-        stressmeterviewmodel.isStopThread.observe(viewLifecycleOwner) { isStopThread = it }
 
         object : Thread()
         {
@@ -74,7 +70,6 @@ class StressMeterFragment : Fragment()
 
         more_image_button.setOnClickListener {
             isStopThread = true
-            stressmeterviewmodel.isStopThread.value = true
             page_num = (page_num + 1).mod(3)
             gridAdapter.changePages(page_num)
             grid_view.adapter = gridAdapter
@@ -82,7 +77,6 @@ class StressMeterFragment : Fragment()
 
         grid_view.setOnItemClickListener { _, _, position, _ ->
             isStopThread = true
-            stressmeterviewmodel.isStopThread.value = true
             val intent = Intent(context, ImageConfirmationActivity::class.java)
             intent.putExtra("PAGE_NUM", page_num)
             intent.putExtra("INDEX", position)
@@ -194,7 +188,6 @@ class StressMeterFragment : Fragment()
     override fun onPause()
     {
         isStopThread = true
-        stressmeterviewmodel.isStopThread.value = true
         super.onPause()
     }
 
